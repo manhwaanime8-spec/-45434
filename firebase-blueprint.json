@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Student": {
+      "title": "Student",
+      "description": "An allowed student who can participate in exams.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string", "description": "The student's full name in Arabic" },
+        "ips": { "type": "array", "description": "List of IPs used by the student" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["fullName", "ips"]
+    },
+    "AccessRequest": {
+      "title": "Access Request",
+      "description": "Request submitted by a user when their name is not found.",
+      "type": "object",
+      "properties": {
+        "requestedName": { "type": "string" },
+        "ipAddress": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["requestedName", "ipAddress", "status", "createdAt"]
+    },
+    "PublicSession": {
+       "title": "Public Session",
+       "description": "Session for public users tracked by IP.",
+       "type": "object",
+       "properties": {
+         "ipAddress": { "type": "string" },
+         "createdAt": { "type": "timestamp" }
+       },
+       "required": ["ipAddress", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/students/{studentId}": {
+      "schema": "Student",
+      "description": "Tracks allowed students and their IPs."
+    },
+    "/accessRequests/{requestId}": {
+      "schema": "AccessRequest",
+      "description": "Stores access requests from unlisted users."
+    },
+    "/publicSessions/{sessionId}": {
+       "schema": "PublicSession",
+       "description": "Tracks public session IP logins."
+    }
+  }
+}

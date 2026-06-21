@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Aref+Ruqaa:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+}
+
+body {
+  font-family: theme('fontFamily.sans');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: theme('colors.background.light');
+  color: #1A1A1A;
+}
+
+/* Image dimming */
+.dim-image {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.dark-mode, .dark-mode body {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+.dark-mode .bg-white, .dark-mode .bg-\[\#FAF9F6\], .dark-mode .bg-\[\#F8F9FA\], .dark-mode .bg-\[\#fffdf7\] {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+}
+.dark-mode .text-gray-900, .dark-mode .text-\[\#1A1A1A\], .dark-mode .text-\[\#121212\] {
+  color: #f0f0f0 !important;
+}
+.dark-mode .text-gray-800, .dark-mode .text-gray-700 {
+  color: #e0e0e0 !important;
+}
+.dark-mode .text-gray-600, .dark-mode .text-gray-500 {
+  color: #a0a0a0 !important;
+}
+.dark-mode .bg-gray-50 {
+  background-color: #2a2a2a !important;
+}
+.dark-mode .bg-gray-100 {
+  background-color: #333 !important;
+}
+.dark-mode .border-gray-100, .dark-mode .border-gray-200, .dark-mode .border-gray-300 {
+  border-color: #444 !important;
+}
+
+

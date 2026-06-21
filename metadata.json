@@ -1,0 +1,11 @@
+{
+  "name": "Remix: Remix: Remix: Remix: Tamrediano",
+  "description": "A premium medical/nursing exam and question bank platform with offline resume, fuzzy search authentication, and Gemini-powered AI tutoring.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
